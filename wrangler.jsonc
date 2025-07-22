@@ -4,13 +4,14 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "openfort-mcp",
+	"name": "mcp",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-03-10",
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
 	"vars": {
+		"SUPABASE_CLIENT_ID": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdieG9rYnVqcnVncmZmenR0bHdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUwNzk1MDAsImV4cCI6MTk5MDY1NTUwMH0.0Jsj8NiLy6Y_Y-q-9qnlC5c0LrWniP5KSitvsCBoLJk",
 		"SUPABASE_PROJECT_ID": "kzcyhthcmxczzlnortwx",
 		"COOKIE_ENCRYPTION_KEY": "123123123"
 	},
