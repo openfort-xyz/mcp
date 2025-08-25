@@ -13,7 +13,6 @@
 	"vars": {
 		"SUPABASE_CLIENT_ID": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6Y3lodGhjbXhjenpsbm9ydHd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUyNzU0NjMsImV4cCI6MTk5MDg1MTQ2M30.PKVxZkJOC2o5Loz_6DqxsYWXShjp0XLcc8TBv-ixmVM",
 		"SUPABASE_PROJECT_ID": "kzcyhthcmxczzlnortwx",
-		"COOKIE_ENCRYPTION_KEY": "123123123"
 	},
 	"migrations": [
 		{
