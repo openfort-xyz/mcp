@@ -6,6 +6,9 @@ interface Document {
   content: string;
 }
 
+// Maximum of 24k tokens (aprox)
+const MAX_CHARS = 24000 * 4;
+
 let documents: Document[] = [];
 let isDocumentsLoaded = false;
 
@@ -71,15 +74,29 @@ export function register(server: McpServer) {
         const searchTerms = searchPhrase.toLowerCase().split(/\s+/).filter(Boolean);
         const searchResults = searchDocuments(searchTerms);
 
-        // Format all documents into a single string to return
-        const formattedResults = searchResults.length > 0
-          ? searchResults.map(doc => doc.content).join('\n\n')
-          : 'No matching sections found.';
+        if (searchResults.length === 0) {
+          return { content: [{ type: 'text', text: 'No matching sections found.' }] };
+        }
+
+        let accumulated = '';
+        for (const doc of searchResults) {
+          const nextContent = doc.content + '\n\n';
+          if ((accumulated.length + nextContent.length) > MAX_CHARS) {
+            const remaining = MAX_CHARS - accumulated.length;
+            accumulated += nextContent.slice(0, remaining);
+            break;
+          } else {
+            accumulated += nextContent;
+          }
+        }
+
         return {
-          content: [{ type: 'text', text: formattedResults }]
+          content: [{ type: 'text', text: accumulated }]
         };
+
       } catch (error) {
-        return { content: [{ type: 'text', text: 'An error occurred while searching the documentation: ' + error }]
+        return {
+          content: [{ type: 'text', text: 'An error occurred while searching the documentation: ' + error }]
         };
       }
     }

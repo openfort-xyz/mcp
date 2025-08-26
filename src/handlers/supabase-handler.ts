@@ -29,7 +29,7 @@ app.get("/authorize", async (c) => {
   const oauthState = JSON.stringify({ oauthReqInfo, state });
   setCookie(c, "oauth_state", oauthState, {
     path: '/',
-    maxAge: 300,
+    maxAge: 1800,
     secure: true,
     httpOnly: false,
     sameSite: 'lax'
