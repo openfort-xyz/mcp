@@ -180,7 +180,7 @@ export function register(server: McpServer, agent: MyMCP, props: {
           body: { type: "sk_shield", uuid: uuidv4() }
         })
 
-        return { content: [{ text: `Created shield keys, here are all the existing keys:\nPublic key: ${data.api_key}, \nSecret key: ${data.api_secret}, \nEncryption key: ${data.encryption_part} \nMake sure to copy the encryption key, it will never be shown again.`, type: "text" }] }
+        return { content: [{ text: `Created shield keys, here are all the existing keys:\nPublic key: ${data.api_key}, \nSecret key: ${data.api_secret}, \nEncryption key: ${data.encryption_part} \nMake sure to copy the encryption key, it will never be shown again. Also, never store the encryption key on the client side, it is only for the server side.`, type: "text" }] }
       }
       catch (error) {
         return { content: [{ text: "Failed to create shield keys: " + error, type: "text" }] }
