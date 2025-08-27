@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "mcp",
+	"name": "openfort-mcp",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-03-10",
 	"compatibility_flags": [
@@ -33,7 +33,7 @@
 	"kv_namespaces": [
 		{
 			"binding": "OAUTH_KV",
-			"id": "6ab09ebaa5634021bac430070a8fb665"
+			"id": "606c4eb4289340279ca1a8404d2fc260"
 		},
 	],
 	/**
